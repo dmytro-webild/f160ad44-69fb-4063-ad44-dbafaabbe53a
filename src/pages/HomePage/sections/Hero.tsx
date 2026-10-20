@@ -34,7 +34,7 @@ export default function HeroSection(): React.JSX.Element {
               icon: MapPin,
             },
           ]}
-        imageSrc="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1600&auto=format&fit=crop"
+        imageSrc="https://storage.googleapis.com/webild/users/user_3IRJHLcAopt8gwPZIHvwEWLR2CM/uploaded-1792489177501-q80rsmsp.png"
         textAnimation="fade-blur"
       />
         </SectionErrorBoundary>
