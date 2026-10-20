@@ -1,115 +1,27 @@
-import React from "react";
-import { routes } from "@/routes";
-import NavbarCentered from "@/components/ui/NavbarCentered";
-import HeroBillboard from "@/components/sections/hero/HeroBillboard";
 import PolicyContent from "@/components/sections/legal/PolicyContent";
-import ContactCta from "@/components/sections/contact/ContactCta";
-import FooterSimple from "@/components/sections/footer/FooterSimple";
+import FaqTwoColumn from "@/components/sections/faq/FaqTwoColumn";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import TextAnimation from "@/components/ui/TextAnimation";
+import Button from "@/components/ui/Button";
 
 export default function ShippingReturnsPage() {
-  const policySections = [
-    {
-      heading: "1. Shipping & Order Processing",
-      content: [
-        {
-          type: "paragraph" as const,
-          text: "Orders are processed within 1 to 2 business days (excluding weekends and holidays). You will receive a shipping confirmation email containing tracking information as soon as your package leaves our fulfillment center.",
-        },
-        {
-          type: "bullet" as const,
-          items: [
-            "Standard Shipping (3-5 business days): Standard delivery rates apply.",
-            "Express Shipping (1-2 business days): Expedited handling and transit.",
-            "International Shipping (7-14 business days): Customs duties and taxes may apply upon arrival.",
-          ],
-        },
-      ],
-    },
-    {
-      heading: "2. Return & Exchange Policy",
-      content: [
-        {
-          type: "paragraph" as const,
-          text: "We want you to be completely satisfied with your purchase. If you need to return an item, we accept eligible returns within 30 days of the original delivery date.",
-        },
-        {
-          type: "bullet" as const,
-          items: [
-            "Items must be unused, unwashed, and in original packaging with all tags attached.",
-            "Return shipping costs are covered by the customer unless the item arrived damaged or defective.",
-            "Refunds will be processed back to the original method of payment within 5 to 7 business days of receipt.",
-          ],
-        },
-      ],
-    },
-    {
-      heading: "3. Damaged or Missing Shipments",
-      content: [
-        {
-          type: "paragraph" as const,
-          text: "In the event that your package arrives damaged or contains incorrect items, please contact our support team immediately with photos of the issue. We will arrange a replacement or full refund promptly.",
-        },
-      ],
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <NavbarCentered
-        logo="Enterprise"
-        navItems={routes.map((r) => ({ name: r.label, href: r.path }))}
-        ctaButton={{ text: "Get Support", href: "/contact" }}
-      />
-
-      <main>
-        <HeroBillboard
-          tag="Customer Care"
-          title="Shipping & Returns Policy"
-          description="Everything you need to know about delivery times, order tracking, and hassle-free returns."
-          primaryButton={{ text: "Start a Return", href: "/contact" }}
-          secondaryButton={{ text: "Contact Support", href: "/contact" }}
-          textAnimation="slide-up"
-        />
-
-        <PolicyContent
-          title="Fulfillment Guidelines & Details"
-          subtitle="Clear, transparent policies designed to deliver a dependable customer experience."
-          sections={policySections}
-        />
-
-        <ContactCta
-          tag="Need Support?"
-          text="Have specific questions regarding international orders, custom requests, or delivery status?"
-          primaryButton={{ text: "Get in Touch", href: "/contact" }}
-          secondaryButton={{ text: "Read FAQ", href: "/faq" }}
-          textAnimation="fade"
-        />
-      </main>
-
-      <FooterSimple
-        brand="Enterprise Inc."
-        columns={[
-          {
-            title: "Navigation",
-            items: routes.map((r) => ({ label: r.label, href: r.path })),
-          },
-          {
-            title: "Support & Legal",
-            items: [
-              { label: "Shipping & Returns", href: "/shipping-returns" },
-              { label: "Privacy Policy", href: "/privacy-policy" },
-              { label: "Terms & Conditions", href: "/terms" },
-              { label: "WeChat: Support_Official", href: "#" },
-            ],
-          },
-        ]}
-        copyright="© 2025 Enterprise Inc. All rights reserved."
-        links={[
-          { label: "Shipping & Returns", href: "/shipping-returns" },
-          { label: "Privacy Policy", href: "/privacy-policy" },
-          { label: "Terms & Conditions", href: "/terms" },
-        ]}
-      />
-    </div>
+    <>
+      <div data-webild-section="PolicyContent"><PolicyContent
+        title="Shipping & Return Policies"
+        subtitle="Clear guidelines on wholesale fulfillment, freight options, return eligibility, and restock terms for our retail partners."
+        sections={[{"heading":"Order Processing & Fulfillment","content":[{"type":"paragraph","text":"All DRIFTDEN WHOLESALE orders placed before 12:00 PM PST are processed within 1-2 business days from our Los Angeles warehouse."},{"type":"list","items":["Standard wholesale order processing: 1-2 business days","Custom or decorated merchandise orders: 5-7 business days","Orders submitted on weekends or holidays ship the following business day"]}]},{"heading":"Freight & Carrier Options","content":[{"type":"paragraph","text":"We partner with major freight and parcel carriers to provide flexible shipping solutions for store orders of all sizes."},{"type":"numbered-list","items":["Standard Ground: Economical parcel shipping via UPS or FedEx (2-5 business days)","LTL Freight Shipping: Palletized bulk shipping with optional liftgate service","Will Call Pickup: Free local warehouse pickup at our Los Angeles facility by appointment"]}]},{"heading":"Return Eligibility & Merchandise Terms","content":[{"type":"paragraph","text":"To maintain competitive wholesale pricing, returns are accepted strictly for factory defects, damaged items, or fulfillment errors within 14 days of delivery."},{"type":"list","items":["All returns require a pre-approved Return Merchandise Authorization (RMA)","Items must remain unwashed, unworn, and in original polybag packaging","Altered, printed, or embroidered garments are non-returnable and non-refundable"]}]},{"heading":"Restocking Fees & Claims Process","content":[{"type":"paragraph","text":"Authorized returns of non-defective goods or refused freight deliveries are subject to standard restocking charges to cover warehouse handling."},{"type":"list","items":["15% restocking fee applied to approved non-defective merchandise returns","Buyers are responsible for all return freight and shipping charges","Carton shortages or damaged freight must be reported within 48 hours of receipt"]}]},{"heading":"Reseller Support & Order Help","content":[{"type":"paragraph","text":"Our dedicated wholesale support team in Los Angeles is available to assist with custom freight quotes, tracking updates, and RMA requests."}]}]}
+      /></div>
+      <div data-webild-section="FaqTwoColumn"><FaqTwoColumn
+        tag="SHIPPING & RETURNS"
+        title="Wholesale Logistics & Policy FAQ"
+        description="Find clear answers on bulk freight dispatch, order fulfillment timelines, return eligibility, and restock policies for your reseller account."
+        primaryButton={{"text":"Contact Support","href":"/contact"}}
+        secondaryButton={{"text":"Browse Catalogue","href":"/products"}}
+        items={[{"question":"What are your standard processing and shipping lead times?","answer":"Bulk orders placed before 12:00 PM PST are processed within 1 to 2 business days from our Los Angeles warehouse. Freight shipping transit times vary by carrier and destination."},{"question":"Which freight carriers and delivery options do you offer?","answer":"We ship via UPS Ground, FedEx Freight, and LTL carriers for palletized orders. Local will-call pickup is also available at our Los Angeles facility upon scheduling."},{"question":"What is your policy on merchandise returns and restocking fees?","answer":"Unopened, blank merchandise in original condition can be returned within 14 days of delivery. Eligible returns are subject to a standard 15% restocking fee."},{"question":"How do I report damaged goods or missing items?","answer":"Claims for damaged goods or carton shortages must be reported within 48 hours of receipt. Please provide your invoice number and detailed photo documentation."},{"question":"Can customized or altered apparel be returned?","answer":"Garments that have undergone screen printing, embroidery, or other alterations cannot be returned or exchanged unless a prior manufacturing defect is verified."}]}
+        textAnimation="slide-up"
+      /></div>
+      <div data-webild-section="ContactCta"><section aria-label="Contact section" className="py-20"><div className="w-content-width mx-auto"><ScrollReveal variant="fade-blur"><div className="flex flex-col items-center gap-8 md:gap-10 py-20 px-8 rounded card"><div className="flex flex-col items-center gap-2"><div className="px-3 py-1 mb-1 text-sm card rounded w-fit"><p>Reseller Support</p></div><TextAnimation text="Need assistance with freight quotes, carrier options, or return authorizations? Contact our Los Angeles support team today." variant="slide-up" gradientText={true} tag="h2" className="md:max-w-8/10 text-5xl 2xl:text-6xl leading-[1.15] font-semibold text-center text-balance" /><div className="flex flex-wrap justify-center gap-3 mt-2 md:mt-3"><Button text="Contact Support" href="/contact" variant="primary" /><Button text="Order Inquiries" href="#shipping-info" variant="secondary" animationDelay={0.1} /></div></div></div></ScrollReveal></div></section></div>
+    </>
   );
 }
