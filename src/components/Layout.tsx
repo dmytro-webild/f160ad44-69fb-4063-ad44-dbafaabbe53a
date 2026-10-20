@@ -7,47 +7,28 @@ import { StyleProvider } from "@/components/ui/StyleProvider";
 
 export default function Layout() {
   const navItems = [
-  {
-    "name": "Home",
-    "href": "#hero"
-  },
-  {
-    "name": "Products",
-    "href": "#products"
-  },
-  {
-    "name": "About",
-    "href": "#about"
-  },
-  {
-    "name": "Contact",
-    "href": "#contact"
-  },
-  {
-    "name": "Metrics",
-    "href": "#metrics"
-  },
-  {
-    "name": "Testimonials",
-    "href": "#testimonials"
-  },
-  {
-    "name": "Social Proof",
-    "href": "#social-proof"
-  }
-];
+    { name: "Home", href: "#hero" },
+    { name: "Products", href: "#products" },
+    { name: "Premium Blanks", href: "#premium-blanks" },
+    { name: "Value Apparel", href: "#value-apparel" },
+    { name: "Made for Resellers", href: "#resellers" },
+    { name: "How It Works", href: "#how-it-works" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" }
+  ];
 
   return (
     <StyleProvider buttonVariant="shift" siteBackground="floatingGradient" heroBackground="lightRaysCenter">
       <SiteBackgroundSlot />
       <SectionErrorBoundary name="navbar">
         <NavbarDropdown
-      logo="DRIFTDEN WHOLESALE"
-      ctaButton={{
-        text: "REQUEST A QUOTE",
-        href: "#contact",
-      }}
-     navItems={navItems} />
+          logo="DRIFTDEN WHOLESALE"
+          ctaButton={{
+            text: "REQUEST A QUOTE / 联系我们",
+            href: "#contact",
+          }}
+          navItems={navItems}
+        />
       </SectionErrorBoundary>
       <main className="flex-grow">
         <Outlet />
