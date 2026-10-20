@@ -18,23 +18,67 @@ const ContactInline = () => {
     <section aria-label="Contact section" className="py-20">
       <div className="w-content-width mx-auto">
         <ScrollReveal variant="fade-blur">
-          <div className="flex flex-col items-center gap-8 md:gap-10 py-20 px-8 rounded card">
-            <div className="flex flex-col items-center gap-2">
-              <div className="px-3 py-1 mb-1 text-sm card rounded w-fit">
-                <p>{"INQUIRE"}</p>
+          <div className="flex flex-col items-center gap-8 md:gap-10 py-16 px-6 md:px-12 rounded card">
+            <div className="flex flex-col items-center gap-4 text-center max-w-4xl w-full">
+              <div className="px-3 py-1 text-sm card rounded w-fit">
+                <p>{"INQUIRE / 联系我们"}</p>
               </div>
 
-              <TextAnimation
-                text={"CONTACT DRIFTDEN WHOLESALE TODAY FOR PRICING AND AVAILABILITY."}
-                variant={"fade-blur"}
-                gradientText={true}
-                tag="h2"
-                className="md:max-w-8/10 text-5xl 2xl:text-6xl leading-[1.15] font-semibold text-center text-balance"
-              />
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight">
+                Contact DRIFTDEN WHOLESALE
+              </h2>
 
-              <div className="flex flex-wrap justify-center gap-3 mt-2 md:mt-3">
-                <Button text={primaryButton.text} href={primaryButton.href} variant="primary" />
-                <Button text={secondaryButton.text} href={secondaryButton.href} variant="secondary" animationDelay={0.1} />
+              <p className="text-lg text-accent max-w-2xl">
+                Questions about wholesale clothing, product availability or bulk purchasing? Contact DRIFTDEN INC. using the form below.
+              </p>
+
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 text-left">
+                <div className="card p-6 rounded space-y-4">
+                  <h3 className="font-bold text-xl text-foreground border-b border-accent/20 pb-2">
+                    Contact Information
+                  </h3>
+                  <div>
+                    <p className="text-xs uppercase text-accent font-semibold tracking-wider">Legal Business Name</p>
+                    <p className="text-foreground font-medium text-base">DRIFTDEN INC.</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase text-accent font-semibold tracking-wider">Email</p>
+                    <a href="mailto:driftdeninc@gmail.com" className="text-foreground font-medium text-base hover:underline">
+                      driftdeninc@gmail.com
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase text-accent font-semibold tracking-wider">WhatsApp</p>
+                    <a href="https://wa.me/16262035546" target="_blank" rel="noopener noreferrer" className="text-foreground font-medium text-base hover:underline">
+                      +1 (626) 203-5546
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase text-accent font-semibold tracking-wider">WeChat / 微信</p>
+                    <p className="text-foreground font-medium text-base">Driftden</p>
+                  </div>
+                </div>
+
+                <form onSubmit={(e) => e.preventDefault()} className="card p-6 rounded space-y-4">
+                  <h3 className="font-bold text-xl text-foreground border-b border-accent/20 pb-2">
+                    Inquiry Form
+                  </h3>
+                  <div>
+                    <label className="block text-xs font-semibold uppercase text-accent mb-1">Full Name</label>
+                    <input type="text" placeholder="Your Name" className="w-full p-2.5 rounded text-foreground bg-background border border-accent/30 text-sm focus:outline-none" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold uppercase text-accent mb-1">Email Address</label>
+                    <input type="email" placeholder="driftdeninc@gmail.com" className="w-full p-2.5 rounded text-foreground bg-background border border-accent/30 text-sm focus:outline-none" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold uppercase text-accent mb-1">Message / Product Inquiry</label>
+                    <textarea rows={3} placeholder="Inquire about T-Shirts, Hoodies, Pants, Hats..." className="w-full p-2.5 rounded text-foreground bg-background border border-accent/30 text-sm focus:outline-none"></textarea>
+                  </div>
+                  <button type="submit" className="w-full primary-button py-3 rounded text-sm font-semibold uppercase tracking-wide cursor-pointer">
+                    REQUEST A QUOTE / 联系我们
+                  </button>
+                </form>
               </div>
             </div>
           </div>
