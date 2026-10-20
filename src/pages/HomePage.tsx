@@ -18,7 +18,8 @@ import ContactSection from './HomePage/sections/Contact';
 import PremiumBlanksSection from './HomePage/sections/PremiumBlanks';
 import ValueApparelSection from './HomePage/sections/ValueApparel';
 import ResellersSection from './HomePage/sections/Resellers';
-import HowItWorksSection from './HomePage/sections/HowItWorks';export default function HomePage(): React.JSX.Element {
+import HowItWorksSection from './HomePage/sections/HowItWorks';
+import ShippingSection from './HomePage/sections/Shipping';export default function HomePage(): React.JSX.Element {
   return (
 <>
   <HeroSection />
@@ -39,6 +40,7 @@ import HowItWorksSection from './HomePage/sections/HowItWorks';export default fu
 
   <FaqSection />
 
+      <ShippingSection />
   <ContactSection />
     </>
   );
